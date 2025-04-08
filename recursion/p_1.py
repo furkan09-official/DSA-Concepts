@@ -52,5 +52,31 @@ def sum(n):
     else:
         return n + sum(n-1)
 print(sum(20))
+print('<------------------------------------------------>')
 
+#print the factirial of n using recursion
+def factorial(N):
+    if N == 0:
+        return 1
+    else:
+        return N * factorial(N - 1)
+print(factorial(5))
+print('<------------------------------------------------>')
 
+#reverse an array using recursion
+def reverse_array(arr , start , end):
+    if start >= end:
+        return None
+    else:
+        arr[start],arr[end] = arr[end],arr[start]
+        reverse_array(arr , start + 1 , end - 1)
+arr = [5,4,3,2,1]
+reverse_array(arr , 0 , len(arr) -1)
+print(arr)
+
+# another method
+def rev_arr(arr):
+    if len(arr)  == 0:
+        return []
+    return [arr[-1]] + rev_arr(arr[:-1])
+print(rev_arr([5,4,3,2,1]))
